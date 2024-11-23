@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeType Pro - Programming Typing Test</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-keyboard"></i> CodeType Pro</h1>
+            <p class="subtitle">Master Your Coding Speed</p>
+        </header>
+
+        <div class="language-selector">
+            <button class="nav-btn prev" id="prev-button" onclick="navigateLanguages('prev')">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="language-cards">
+                <div class="language-card active" data-language="javascript">
+                    <i class="fab fa-js"></i>
+                    <span>JavaScript</span>
+                </div>
+                <div class="language-card" data-language="python">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="language-card" data-language="java">
+                    <i class="fab fa-java"></i>
+                    <span>Java</span>
+                </div>
+                <div class="language-card" data-language="cpp">
+                    <i class="fas fa-code"></i>
+                    <span>C++</span>
+                </div>
+                <div class="language-card" data-language="ruby">
+                    <i class="fas fa-gem"></i>
+                    <span>Ruby</span>
+                </div>
+            </div>
+            <button class="nav-btn next" id="next-button" onclick="navigateLanguages('next')">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="difficulty-selector">
+            <button class="difficulty-btn active" data-difficulty="easy">Easy</button>
+            <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+        </div>
+
+        <div class="test-container">
+            <div class="stats-bar">
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <span>Time: <span id="time">60</span>s</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>WPM: <span id="wpm">0</span></span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Accuracy: <span id="accuracy">100</span>%</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-keyboard"></i>
+                    <span>CPM: <span id="cpm">0</span></span>
+                </div>
+            </div>
+
+            <div class="code-area">
+                <pre id="codeDisplay" class="code-display"></pre>
+                <textarea 
+                    id="codeInput" 
+                    class="code-input" 
+                    spellcheck="false" 
+                    placeholder="Start typing here..."
+                    autocomplete="off"
+                    autocapitalize="off"
+                ></textarea>
+            </div>
+
+            <div class="controls">
+                <button id="resetButton" class="control-btn">
+                    <i class="fas fa-redo"></i> Reset Test
+                </button>
+            </div>
+        </div>
+
+        <div class="results hidden" id="results">
+            <h2><i class="fas fa-trophy"></i> Test Results</h2>
+            <div class="results-grid">
+                <div class="result-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>WPM</h3>
+                    <span id="finalWpm">0</span>
+                </div>
+                <div class="result-item">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Accuracy</h3>
+                    <span id="finalAccuracy">0%</span>
+                </div>
+                <div class="result-item">
+                    <i class="fas fa-keyboard"></i>
+                    <h3>CPM</h3>
+                    <span id="finalCpm">0</span>
+                </div>
+                <div class="result-item">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>Errors</h3>
+                    <span id="finalErrors">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 CodeType Pro</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
